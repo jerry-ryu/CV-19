@@ -1,2 +1,22 @@
-# CV-19
-네이버 부스트캠프 CV 19팀 github repository
+# 코테 스터디
+## 1주차
+
+### 문제 (https://www.acmicpc.net/problem/11055)
+수열 A가 주어졌을 때, 그 수열의 증가 부분 수열 중에서 합이 가장 큰 것을 구하는 프로그램을 작성하시오.
+예를 들어, 수열 A = {1, 100, 2, 50, 60, 3, 5, 6, 7, 8} 인 경우에 합이 가장 큰 증가 부분 수열은 A = {1, 100, 2, 50, 60, 3, 5, 6, 7, 8} 이고, 합은 113이다.
+
+### 풀이
+```python
+n = int(input())
+a = list(map(int, input().split()))
+       
+dp = a[:]
+dp[0] = a[0]
+
+for i in range(n):
+    for j in range(i):
+        if a[i] > a[j]:
+            dp[i] = max(dp[i], dp[j] + a[i])
+
+print(max(dp))
+```
