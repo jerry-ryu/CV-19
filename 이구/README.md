@@ -192,6 +192,7 @@ def five_side():
 ```
 
 #### 3. Case 별 갯수 계산하기
+![image](https://user-images.githubusercontent.com/59161083/195993743-a8ac167e-7910-4a17-bd62-1d3c0c9b99bc.png)
 
 ##### 1. 3면을 보이는 경우 (n != 1 인 경우)
 정육면체의 맨 위, 꼭짓점 4개   
