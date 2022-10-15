@@ -191,12 +191,6 @@ def five_side():
     return sum(nums) - max(nums)    
 ```
 
-#### 3. 출력 형식 맞추기
-```python
-for ans in answer:
-    print(" ".join(ans))
-```
-
 #### 3. Case 별 갯수 계산하기
 
 ##### 1. 3면을 보이는 경우 (n != 1 인 경우)
@@ -218,6 +212,17 @@ for ans in answer:
 ##### 5. 5면을 보이는 경우 (n = 1 인 경우)
 n = 1 일때, 항상 1개
 
+#### 4. Case 별 answer 계산 후 출력
+```python
+if n > 2:
+    answer = 4 * three_side() + (8 * n - 12) * two_side() + ((n-2)**2 + 4*(n-1)*(n-2)) * one_side()
+elif n == 2:
+    answer = 4 * three_side() + 4 * two_side()
+else:
+    answer = five_side()
+
+print(answer)
+```
 
 ### 전체 코드
 전체 코드는 [여기](https://github.com/99sphere/Problem-Solving/blob/main/Graph%20Traversal/BOJ_1041.py)서 확인할 수 있다.
