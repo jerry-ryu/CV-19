@@ -228,3 +228,94 @@ print(answer)
 ### 전체 코드
 전체 코드는 [여기](https://github.com/99sphere/Problem-Solving/blob/main/Graph%20Traversal/BOJ_1041.py)서 확인할 수 있다.
 
+
+
+
+## \[Gold 5\] BOJ 1041. 주사위
+
+> Source:[https://www.acmicpc.net/problem/1041](https://www.acmicpc.net/problem/1041)
+
+## 문제
+
+어떠한 자연수 N은, 몇 개의 연속된 자연수의 합으로 나타낼 수 있다. 당신은 어떤 자연수 N(1 ≤ N ≤ 10,000,000)에 대해서, 이 N을 몇 개의 연속된 자연수의 합으로 나타내는 가지수를 알고 싶어한다. 이때, 사용하는 자연수는 N이하여야 한다.
+
+예를 들어, 15를 나타내는 방법은 15, 7+8, 4+5+6, 1+2+3+4+5의 4가지가 있다. 반면에 10을 나타내는 방법은 10, 1+2+3+4의 2가지가 있다.
+
+N을 입력받아 가지수를 출력하는 프로그램을 작성하시오.
+
+## 조건
+
+### 입력
+
+첫 줄에 정수 N이 주어진다.
+
+### 출력
+
+입력된 자연수 N을 몇 개의 연속된 자연수의 합으로 나타내는 가지수를 출력하시오
+
+## 입출력 예시
+
+### \[ input \]
+
+```
+15
+```
+
+### \[ output \]
+
+```
+4
+```
+
+## 풀이
+
+Two Pointer 유형의 문제이다. start, end pointer를 만들고, 이를 적절히 움직여 해결하면 된다.
+
+### input 받기
+
+```
+n = int(input())
+ans, temp = 0, 0
+start, end = 0, 0
+```
+
+ans / temp는 각각 정답(연속된 자연수의 합으로 표현할 수 있는 경우의 수) / start~end까지 연속된 자연수의 합을 의미한다.
+
+### Case 분류
+
+while문을 돌며 end가 n과 같아질 때 까지 아래의 과정을 반복한다.
+
+#### temp < n
+
+end를 1 증가시켜, end+= 1, temp += end
+
+```
+if temp < n:
+        end += 1
+        temp += end
+```
+
+#### temp == n
+
+정답인 경우이므로 ans += 1, 다음 경우를 찾기 위해 end += 1, temp += end
+
+```
+elif temp > n:
+        temp -= start
+        start += 1
+```
+
+#### temp > n
+
+start를 1 증가시켜, temp -= start, start += 1
+
+```
+else:
+    ans += 1
+    end += 1
+    temp += end
+```
+
+## 전체 코드
+
+전체 코드는 [여기](https://github.com/99sphere/Problem-Solving/blob/main/etc/BOJ_2018.py "여기")서 확인할 수 있다.
