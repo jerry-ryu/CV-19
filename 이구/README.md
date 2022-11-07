@@ -231,7 +231,7 @@ print(answer)
 
 
 
-## \[Gold 5\] BOJ 2018. 수들의 합5
+## 4주차 \[Gold 5\] BOJ 2018. 수들의 합5
 
 > Source:[https://www.acmicpc.net/problem/1041](https://www.acmicpc.net/problem/1041)
 
